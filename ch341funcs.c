@@ -184,7 +184,7 @@ size_t ch341ReadCmdMarshall(uint8_t *buffer, uint32_t addr, struct EEPROM *eepro
         *ptr++ = (addr>>0 & 0xFF); // 4
     }
     *ptr++ = mCH341A_CMD_I2C_STM_STA; // 6/5
-    *ptr++ = mCH341A_CMD_I2C_STM_OUT | 1; // 7/6
+    *ptr++ = mCH341A_CMD_I2C_STM_OUT; // 7/6 // juul removed the | 1
     *ptr++ = (EEPROM_I2C_BUS_ADDRESS | msb_addr)<<1 | 1; // 8/7: Read command
 
     // Read 32 bytes
